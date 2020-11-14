@@ -81,13 +81,13 @@ def perfTest(tcp_type):
     TIME = 10
     h1, h3, h8 = net.get('h1', 'h3', 'h8')
 
-    h8.cmd('iperf3 -s -i 1 > h8_server_%s_%d &' % (TCP_TYPE, myLossPercentage))
+    h8.cmd('iperf3 -s -i 1 > h8_server_%s_%d.txt &' % (TCP_TYPE, myLossPercentage))
     print("h8 start as a server")
 
-    h1.cmd('iperf3 -c 10.0.0.1 -t %d -C %s > flow_%s_%d &' % (TIME, TCP_TYPE, TCP_TYPE, myLossPercentage))
+    h1.cmd('iperf3 -c 10.0.0.1 -t %d -C %s > flow_%s_%d.txt &' % (TIME, TCP_TYPE, TCP_TYPE, myLossPercentage))
     print("h1 start to send tcp request to h1")
 
-    h3.cmd('ping 10.0.0.7 -i 1 -c %d> pingResult_%s_%d &' % (TIME, TCP_TYPE, myLossPercentage))
+    h3.cmd('ping 10.0.0.7 -i 1 -c %d> pingResult_%s_%d.txt &' % (TIME, TCP_TYPE, myLossPercentage))
     print("h3 start to ping h7")
 
     time.sleep(TIME)

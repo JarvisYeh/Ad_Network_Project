@@ -87,7 +87,7 @@ def perfTest(tcp_type):
     h1.cmd('iperf3 -c 10.0.0.8 -t %d -C %s > flow_%s_%d.txt &' % (TIME, TCP_TYPE, TCP_TYPE, myLossPercentage))
     print("h1 start to send tcp request to h8")
 
-    h3.cmd('ping 10.0.0.7 -i 1 -c %d> pingResult_%s_%d.txt &' % (TIME, TCP_TYPE, myLossPercentage))
+    h3.cmd('ping 10.0.0.7 -i 1 -c %d > pingResult_%s_%d.txt &' % (TIME, TCP_TYPE, myLossPercentage))
     print("h3 start to ping h7")
 
     print "waiting for background process " + str(TIME) + " sec"

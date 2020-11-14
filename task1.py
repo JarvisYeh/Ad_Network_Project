@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+import sys
+
 from mininet.topo import Topo
 from mininet.net import Mininet
 from mininet.node import CPULimitedHost
@@ -14,7 +16,7 @@ import os
 myBandwidth = 50    # bandwidth of link ink Mbps
 myDelay = ['0ms', '10ms']    # latency of each bottleneck link
 myQueueSize = 1000  # buffer size in packets
-myLossPercentage = 0   # random loss on bottleneck links
+myLossPercentage = -1   # random loss on bottleneck links
 
 #
 #           h2      h4       h6
@@ -62,7 +64,7 @@ class ParkingLotTopo( Topo ):
                 self.addLink(host, switch3) # n hosts to switch 3 (h6, h7, h8)
 
 
-def perfTest():
+def perfTest(tcp_type):
     "Create network and run simple performance test"
     topo = ParkingLotTopo(n=3)
     net = Mininet( topo=topo,
@@ -73,13 +75,32 @@ def perfTest():
     print("Testing network connectivity")
     net.pingAll()
     CLI( net )  # start mininet interface
+
+    # task start here
+    TCP_TYPE = tcp_type
+    TIME = 10
+    h1, h3, h8 = net.get('h1', 'h3', 'h8')
+
+    h8.cmd('iperf3 -s -i 1 > h8_server_%s_%d &' % (TCP_TYPE, myLossPercentage))
+    print("h8 start as a server")
+
+    h1.cmd('iperf3 -c 10.0.0.1 -t %d -C %s > flow_%s_%d &' % (TIME, TCP_TYPE, TCP_TYPE, myLossPercentage))
+    print("h1 start to send tcp request to h1")
+
+    h3.cmd('ping 10.0.0.7 -i 1 -c %d> pingResult_%s_%d &' % (TIME, TCP_TYPE, myLossPercentage))
+    print("h3 start to ping h7")
+    # task end here
+
+
     net.stop() # exit mininet
 
 if __name__ == '__main__':
+    tcp_type = sys.argv[0]
+    myLossPercentage = sys.argv[1]
     os.system("sudo mn -c") # clear all previous mininet config
     os.system("killall /usr/bin/ovs-testcontroller")
     setLogLevel( 'info' )
     print("\n\n\n ------Start Mininet ----- \n\n")
-    perfTest()
+    perfTest(tcp_type)
     print("\n\n\n ------End Mininet ----- \n\n")
 

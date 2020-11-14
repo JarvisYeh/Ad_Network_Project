@@ -89,6 +89,8 @@ def perfTest(tcp_type):
 
     h3.cmd('ping 10.0.0.7 -i 1 -c %d> pingResult_%s_%d &' % (TIME, TCP_TYPE, myLossPercentage))
     print("h3 start to ping h7")
+
+    time.sleep(TIME)
     # task end here
 
 

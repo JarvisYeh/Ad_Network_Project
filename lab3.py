@@ -22,7 +22,7 @@ myLossPercentage = 0   # random loss on bottleneck links
 #           |       |        |
 #           |       |        |
 #   h1 ---- S1 ---- S2 ----- S3 ---- h8
-#           |   0ms |   5ms  |
+#           |   0ms |   10ms  |
 #           |       |        |
 #           |       |        |
 #           h3      h5       h7

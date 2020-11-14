@@ -74,7 +74,7 @@ def perfTest(tcp_type):
     dumpNodeConnections( net.hosts )
     print("Testing network connectivity")
     net.pingAll()
-    CLI( net )  # start mininet interface
+    # CLI( net )  # start mininet interface
 
     # task start here
     TCP_TYPE = tcp_type
@@ -91,6 +91,7 @@ def perfTest(tcp_type):
     print("h3 start to ping h7")
 
     time.sleep(TIME)
+    print "waiting for background process " + str(TIME) + " sec"
     # task end here
 
 

@@ -37,7 +37,7 @@ class ParkingLotTopo( Topo ):
         switch1 = self.addSwitch('s1')
         switch2 = self.addSwitch('s2')
         switch3 = self.addSwitch('s3')
-        
+        print("User set Loss percentage as : ", myLossPercentage, "!!!!")
         # Setting the bottleneck link parameters (htb -> Hierarchical token bucket rate limiting)
         self.addLink( switch1, switch2, 
             bw=myBandwidth, 

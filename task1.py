@@ -95,8 +95,8 @@ def perfTest(tcp_type):
     net.stop() # exit mininet
 
 if __name__ == '__main__':
-    tcp_type = sys.argv[0]
-    myLossPercentage = int(sys.argv[1])
+    tcp_type = sys.argv[1]
+    myLossPercentage = int(sys.argv[2])
     os.system("sudo mn -c") # clear all previous mininet config
     os.system("killall /usr/bin/ovs-testcontroller")
     setLogLevel( 'info' )

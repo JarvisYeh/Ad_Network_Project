@@ -78,20 +78,20 @@ def perfTest(tcp_type):
 
     # task start here
     TCP_TYPE = tcp_type
-    TIME = 10
+    TIME = 30
     h1, h3, h8 = net.get('h1', 'h3', 'h8')
 
     h8.cmd('iperf3 -s -i 1 > h8_server_%s_%d.txt &' % (TCP_TYPE, myLossPercentage))
     print("h8 start as a server")
 
-    h1.cmd('iperf3 -c 10.0.0.1 -t %d -C %s > flow_%s_%d.txt &' % (TIME, TCP_TYPE, TCP_TYPE, myLossPercentage))
-    print("h1 start to send tcp request to h1")
+    h1.cmd('iperf3 -c 10.0.0.8 -t %d -C %s > flow_%s_%d.txt &' % (TIME, TCP_TYPE, TCP_TYPE, myLossPercentage))
+    print("h1 start to send tcp request to h8")
 
     h3.cmd('ping 10.0.0.7 -i 1 -c %d> pingResult_%s_%d.txt &' % (TIME, TCP_TYPE, myLossPercentage))
     print("h3 start to ping h7")
 
-    time.sleep(TIME)
     print "waiting for background process " + str(TIME) + " sec"
+    time.sleep(TIME)
     # task end here
 
 

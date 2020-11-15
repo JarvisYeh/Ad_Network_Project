@@ -84,9 +84,9 @@ def perfTest(tcp_type):
 
     # ### To indirectly measure RTT delay
     # print("--- ping h5 to h8 ---") # to measure the bottleneck level at link S1-S2
-    h5.cmd('ping 10.0.0.8 -i 1 -c %d > h5_ping_result_%s &' % (run_time_tot, TCP_TYPE_first))
+    h5.cmd('ping 10.0.0.8 -i 1 -c %d > h5_ping_result_%s_%s &' % (run_time_tot, TCP_TYPE_first, myDelay[0]))
     # print("--- ping h2 to h8 ---") # to measure the bottleneck level at link S1-S2 and S2-S3
-    h2.cmd('ping 10.0.0.8 -i 1 -c %d > h2_ping_result_%s &' % (run_time_tot, TCP_TYPE_second))
+    h2.cmd('ping 10.0.0.8 -i 1 -c %d > h2_ping_result_%s_%s &' % (run_time_tot, TCP_TYPE_second, myDelay[0]))
 
     
     # Receiver of flow 1 = h1
@@ -96,14 +96,14 @@ def perfTest(tcp_type):
     
     # First, start to send the flow 1 : h8 --> h1
     print("--- h8 sends to h1 with 1 TCP (%s) flow during %d sec ---" % (TCP_TYPE_first, run_time_tot))
-    h8.cmd('iperf3 -c 10.0.0.1 -t %d -C %s > flow1_tcp%s &' % (run_time_tot, TCP_TYPE_first, TCP_TYPE_first))
+    h8.cmd('iperf3 -c 10.0.0.1 -t %d -C %s > flow1_tcp%s_%s &' % (run_time_tot, TCP_TYPE_first, TCP_TYPE_first, myDelay[0]))
 
     # wait 10 seconds 
     time.sleep(10)
 
     # Secondly, start to send the flow 2 : h8 --> h4
     print("--- h8 sends to h4 with 1 TCP (%s) flow during %d sec ---" % (TCP_TYPE_second, run_time_tot - 10))
-    h8.cmd('iperf3 -c 10.0.0.4 -t %d -C %s > flow2_tcp%s &' % (run_time_tot - 10, TCP_TYPE_second, TCP_TYPE_second))
+    h8.cmd('iperf3 -c 10.0.0.4 -t %d -C %s > flow2_tcp%s_%s &' % (run_time_tot - 10, TCP_TYPE_second, TCP_TYPE_second, myDelay[0]))
 
     # wait enough until all processes are done.
     print("wait for process time: ", run_time_tot)

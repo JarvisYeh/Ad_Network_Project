@@ -116,7 +116,7 @@ def perfTest(tcp_type):
 if __name__ == '__main__':
 
     tcp_type = sys.argv[1]
-    myDelay[0] = sys.argv[0]
+    myDelay[0] = sys.argv[2]
     print "User set latecy from s1-s2 to: "+ myDelay[0]
 
     os.system("sudo mn -c")

@@ -78,7 +78,7 @@ def perfTest(tcp_type):
 
     # task start here
     TCP_TYPE = tcp_type
-    TIME = 60
+    TIME = 200
     h1, h3, h8 = net.get('h1', 'h3', 'h8')
 
     h8.cmd('iperf3 -s -i 1 > h8_server_%s_%d.txt &' % (TCP_TYPE, myLossPercentage))

@@ -90,9 +90,9 @@ def perfTest(tcp_type):
 
     
     # Receiver of flow 1 = h1
-    h1.cmd('iperf3 -s -i 1 > h1_server_%s &' % (TCP_TYPE_first))
+    h1.cmd('iperf3 -s -i 1 > h1_server_%s_%s &' % (TCP_TYPE_first, myDelay[0]))
     # Receiver of flow 2 = h4
-    h4.cmd('iperf3 -s -i 1 > h4_server_%s &' % (TCP_TYPE_second))
+    h4.cmd('iperf3 -s -i 1 > h4_server_%s_%s &' % (TCP_TYPE_second, myDelay[0]))
     
     # First, start to send the flow 1 : h8 --> h1
     print("--- h8 sends to h1 with 1 TCP (%s) flow during %d sec ---" % (TCP_TYPE_first, run_time_tot))

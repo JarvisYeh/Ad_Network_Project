@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import sys
 
 from mininet.topo import Topo
 from mininet.net import Mininet
@@ -62,7 +63,7 @@ class ParkingLotTopo( Topo ):
                 self.addLink(host, switch3) # n hosts to switch 3 (h6, h7, h8)
 
 
-def perfTest():
+def perfTest(tcp_type):
     "Create network and run simple performance test"
     topo = ParkingLotTopo(n=3)
     net = Mininet( topo=topo,
@@ -74,18 +75,18 @@ def perfTest():
     net.pingAll()
     # CLI( net )
 
-    TCP_TYPE_first = 'bbr' # bbr or cubic
-    TCP_TYPE_second = 'bbr' # bbr or cubic
-    run_time_tot = 100 # total iperf3 runtime, in seconds. I recommend more than 300 sec.
+    TCP_TYPE_first = tcp_type # bbr or cubic
+    TCP_TYPE_second = tcp_type # bbr or cubic
+    run_time_tot = 500 # total iperf3 runtime, in seconds. I recommend more than 300 sec.
 
     h1, h2, h3, h4, h5, h6, h7, h8 = net.get('h1','h2','h3','h4','h5','h6','h7','h8')
     
 
     # ### To indirectly measure RTT delay
-    # print("--- ping h6 to h2 ---") # to measure the bottleneck level at link S1-S2 and S2-S3
-    # h5.cmd('ping 10.0.0.8 -i 1 -c %d > h5_ping_result_%s &' % (run_time_tot, TCP_TYPE_first))
-    # print("--- ping h7 to h5 ---") # to measure the bottleneck level at link S2-S3
-    # h2.cmd('ping 10.0.0.8 -i 1 -c %d > h2_ping_result_%s &' % (run_time_tot, TCP_TYPE_second))
+    # print("--- ping h5 to h8 ---") # to measure the bottleneck level at link S1-S2
+    h5.cmd('ping 10.0.0.8 -i 1 -c %d > h5_ping_result_%s &' % (run_time_tot, TCP_TYPE_first))
+    # print("--- ping h2 to h8 ---") # to measure the bottleneck level at link S1-S2 and S2-S3
+    h2.cmd('ping 10.0.0.8 -i 1 -c %d > h2_ping_result_%s &' % (run_time_tot, TCP_TYPE_second))
 
     
     # Receiver of flow 1 = h1
@@ -105,6 +106,7 @@ def perfTest():
     h8.cmd('iperf3 -c 10.0.0.4 -t %d -C %s > flow2_tcp%s &' % (run_time_tot - 10, TCP_TYPE_second, TCP_TYPE_second))
 
     # wait enough until all processes are done.
+    print("wait for process time: ", run_time_tot)
     time.sleep((run_time_tot - 10) + 3)
     # CLI(net)
     net.stop() # exit mininet
@@ -112,10 +114,14 @@ def perfTest():
 
 
 if __name__ == '__main__':
+
+    tcp_type = sys.argv[1]
+    myDelay[0] = sys.argv[0]
+
     os.system("sudo mn -c")
     os.system("killall /usr/bin/ovs-testcontroller")
     setLogLevel( 'info' )
     print("\n\n\n ------Start Mininet ----- \n\n")
-    perfTest()
+    perfTest(tcp_type)
     print("\n\n\n ------End Mininet ----- \n\n")
 

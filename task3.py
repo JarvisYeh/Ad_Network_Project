@@ -23,7 +23,7 @@ myLossPercentage = 0   # random loss on bottleneck links
 #           |       |        |
 #           |       |        |
 #   h1 ---- S1 ---- S2 ----- S3 ---- h8
-#           |   0ms |   10ms  |
+#           |  Xms |   10ms  |
 #           |       |        |
 #           |       |        |
 #           h3      h5       h7
@@ -117,6 +117,7 @@ if __name__ == '__main__':
 
     tcp_type = sys.argv[1]
     myDelay[0] = sys.argv[0]
+    print "User set latecy from s1-s2 to: "+ myDelay[0]
 
     os.system("sudo mn -c")
     os.system("killall /usr/bin/ovs-testcontroller")

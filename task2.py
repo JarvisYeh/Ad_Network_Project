@@ -92,7 +92,7 @@ def perfTest(tcp_type):
     print("h3 start to ping h7")
 
     print "waiting for background process " + str(TIME) + " sec"
-    time.sleep(TIME)
+    time.sleep(TIME + 5)
     # task end here
 
 

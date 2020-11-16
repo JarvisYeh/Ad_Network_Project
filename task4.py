@@ -66,7 +66,7 @@ def perfTest():
 
     run_time_tot = 500 # total iperf3 runtime, in seconds. I recommend more than 300 sec.
 
-    h1, h2, h3, h4, h5, h6, h7, h8 = net.get('h1','h2','h3','h4','h5','h6','h7','h8')
+    h1, h2, h3, h4 = net.get('h1','h2','h3','h4')
     
 
     # h3 ping h4

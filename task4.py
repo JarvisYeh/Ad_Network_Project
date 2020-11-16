@@ -49,7 +49,7 @@ class ParkingLotTopo( Topo ):
         self.addLink(host, switch2)
 
 
-def perfTest(tcp_type):
+def perfTest():
     "Create network and run simple performance test"
     topo = ParkingLotTopo()
     net = Mininet( topo=topo,
@@ -105,6 +105,6 @@ if __name__ == '__main__':
     os.system("killall /usr/bin/ovs-testcontroller")
     setLogLevel( 'info' )
     print("\n\n\n ------Start Mininet ----- \n\n")
-    perfTest(tcp_type)
+    perfTest()
     print("\n\n\n ------End Mininet ----- \n\n")
 

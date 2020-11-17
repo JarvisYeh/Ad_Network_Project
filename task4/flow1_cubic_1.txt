@@ -1,0 +1,8 @@
+Connecting to host 10.0.0.2, port 5201
+[  5] local 10.0.0.1 port 37168 connected to 10.0.0.2 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1605584860.32 sec  0.00 Bytes  0.00 bits/sec    4   2.83 KBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-1605584860.32 sec  0.00 Bytes  0.00 bits/sec    4             sender
+[  5]   0.00-1605584860.32 sec  0.00 Bytes  0.00 bits/sec                  receiver

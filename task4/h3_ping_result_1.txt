@@ -1,0 +1,111 @@
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=64 time=22.6 ms
+64 bytes from 10.0.0.4: icmp_seq=4 ttl=64 time=21.5 ms
+64 bytes from 10.0.0.4: icmp_seq=8 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=10 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=12 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=14 ttl=64 time=20.9 ms
+64 bytes from 10.0.0.4: icmp_seq=15 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=17 ttl=64 time=21.0 ms
+64 bytes from 10.0.0.4: icmp_seq=18 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=19 ttl=64 time=20.9 ms
+64 bytes from 10.0.0.4: icmp_seq=24 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=27 ttl=64 time=20.10 ms
+From 10.0.0.3 icmp_seq=28 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=29 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=30 Destination Host Unreachable
+64 bytes from 10.0.0.4: icmp_seq=34 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=36 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=39 ttl=64 time=20.9 ms
+64 bytes from 10.0.0.4: icmp_seq=41 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=64 ttl=64 time=42.5 ms
+64 bytes from 10.0.0.4: icmp_seq=65 ttl=64 time=20.3 ms
+64 bytes from 10.0.0.4: icmp_seq=66 ttl=64 time=21.1 ms
+64 bytes from 10.0.0.4: icmp_seq=77 ttl=64 time=20.5 ms
+From 10.0.0.3 icmp_seq=90 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=91 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=92 Destination Host Unreachable
+64 bytes from 10.0.0.4: icmp_seq=93 ttl=64 time=42.3 ms
+64 bytes from 10.0.0.4: icmp_seq=94 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=95 ttl=64 time=21.4 ms
+64 bytes from 10.0.0.4: icmp_seq=97 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=111 ttl=64 time=1056 ms
+64 bytes from 10.0.0.4: icmp_seq=114 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=118 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=119 ttl=64 time=20.5 ms
+From 10.0.0.3 icmp_seq=122 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=123 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=124 Destination Host Unreachable
+64 bytes from 10.0.0.4: icmp_seq=125 ttl=64 time=2090 ms
+64 bytes from 10.0.0.4: icmp_seq=130 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=132 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=134 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=138 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=139 ttl=64 time=20.9 ms
+64 bytes from 10.0.0.4: icmp_seq=142 ttl=64 time=20.5 ms
+From 10.0.0.3 icmp_seq=155 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=156 Destination Host Unreachable
+From 10.0.0.3 icmp_seq=157 Destination Host Unreachable
+64 bytes from 10.0.0.4: icmp_seq=159 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=160 ttl=64 time=20.4 ms
+64 bytes from 10.0.0.4: icmp_seq=162 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=164 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=166 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=168 ttl=64 time=1056 ms
+64 bytes from 10.0.0.4: icmp_seq=170 ttl=64 time=21.5 ms
+64 bytes from 10.0.0.4: icmp_seq=171 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=172 ttl=64 time=20.6 ms
+64 bytes from 10.0.0.4: icmp_seq=173 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=175 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=179 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=181 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=182 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=184 ttl=64 time=21.5 ms
+64 bytes from 10.0.0.4: icmp_seq=187 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=188 ttl=64 time=20.6 ms
+64 bytes from 10.0.0.4: icmp_seq=190 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=192 ttl=64 time=21.4 ms
+64 bytes from 10.0.0.4: icmp_seq=196 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=197 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=198 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=204 ttl=64 time=42.4 ms
+64 bytes from 10.0.0.4: icmp_seq=205 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=206 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=207 ttl=64 time=21.5 ms
+64 bytes from 10.0.0.4: icmp_seq=208 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=216 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=217 ttl=64 time=20.6 ms
+64 bytes from 10.0.0.4: icmp_seq=218 ttl=64 time=20.3 ms
+64 bytes from 10.0.0.4: icmp_seq=222 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=230 ttl=64 time=20.4 ms
+64 bytes from 10.0.0.4: icmp_seq=231 ttl=64 time=20.3 ms
+64 bytes from 10.0.0.4: icmp_seq=234 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=239 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=240 ttl=64 time=20.3 ms
+64 bytes from 10.0.0.4: icmp_seq=241 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=243 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=244 ttl=64 time=21.5 ms
+64 bytes from 10.0.0.4: icmp_seq=246 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=247 ttl=64 time=21.0 ms
+64 bytes from 10.0.0.4: icmp_seq=248 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=249 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=252 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=254 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=255 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=260 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=264 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=267 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=269 ttl=64 time=42.3 ms
+64 bytes from 10.0.0.4: icmp_seq=271 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=273 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=275 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=278 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=282 ttl=64 time=20.5 ms
+64 bytes from 10.0.0.4: icmp_seq=285 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=291 ttl=64 time=20.8 ms
+64 bytes from 10.0.0.4: icmp_seq=298 ttl=64 time=20.10 ms
+64 bytes from 10.0.0.4: icmp_seq=300 ttl=64 time=20.5 ms
+
+--- 10.0.0.4 ping statistics ---
+300 packets transmitted, 94 received, +12 errors, 68.6667% packet loss, time 752ms
+rtt min/avg/max/mdev = 20.283/65.741/2090.026/257.591 ms, pipe 4

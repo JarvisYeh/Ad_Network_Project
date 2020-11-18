@@ -64,7 +64,7 @@ def perfTest():
     TCP_TYPE_first = "cubic"
     TCP_TYPE_second = "bbr"
 
-    run_time_tot = 500 # total iperf3 runtime, in seconds. I recommend more than 300 sec.
+    run_time_tot = 60 # total iperf3 runtime, in seconds. I recommend more than 300 sec.
 
     h1, h2, h3, h4 = net.get('h1','h2','h3','h4')
     
@@ -73,18 +73,17 @@ def perfTest():
     h3.cmd('ping 10.0.0.4 -i 1 -c %d > h3_ping_result_%s &' % (run_time_tot, str(myQueueSize)))
 
     # Receiver h2
-    h2.cmd('iperf3 -s -i 1 > h1_server_%s &' % (str(myQueueSize)))
+    h2.cmd('iperf3 -s -i 1 > h2_server_%s &' % (str(myQueueSize)))
+    # Receiver h4
+    h4.cmd('iperf3 -s -i 1 > h4_server_%s &' % (str(myQueueSize)))
     
     # First, start to send the flow 1 : h1 --> h2, cubic
     print("--- h1 sends to h2 with 1 TCP (%s) flow during %d sec ---" % (TCP_TYPE_first, run_time_tot))
     h1.cmd('iperf3 -c 10.0.0.2 -t %d -C %s > flow1_%s_%s &' % (run_time_tot, TCP_TYPE_first, TCP_TYPE_first, str(myQueueSize)))
 
-    # wait 10 seconds 
-    # time.sleep(10)
-
-    # Secondly, start to send the flow 2 : h8 --> h4
-    print("--- h1 sends to h2 with 1 TCP (%s) flow during %d sec ---" % (TCP_TYPE_second, run_time_tot))
-    h1.cmd('iperf3 -c 10.0.0.2 -t %d -C %s > flow2_%s_%s &' % (run_time_tot, TCP_TYPE_second, TCP_TYPE_second, str(myQueueSize)))
+    # Secondly, start to send the flow 2 : h1 --> h4, bbr
+    print("--- h1 sends to h4 with 1 TCP (%s) flow during %d sec ---" % (TCP_TYPE_second, run_time_tot))
+    h1.cmd('iperf3 -c 10.0.0.4 -t %d -C %s > flow2_%s_%s &' % (run_time_tot, TCP_TYPE_second, TCP_TYPE_second, str(myQueueSize)))
 
     # wait enough until all processes are done.
     print("wait for process time: ", run_time_tot)
